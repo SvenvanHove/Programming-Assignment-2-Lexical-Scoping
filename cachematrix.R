@@ -1,10 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-
-# This function creates an object that can cache its inverse
-# The crux is the "<<-"" command in the lines 11,12 and 15. At that point an object will be searched, 
-# that lies in an environment above the level in which it was defined.
+# This function creates an object that can cache an inverse of a matrix.
+# The crux is the "<<-"" statement in the lines 7,8 and 11. Here objects will be stored in  
+# an environment above the level in which it was defined.
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
     set <- function(y) {
@@ -19,8 +15,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-
-
+# This function returns the inverse of a matrix. The if statement checks if 
+# the inverse has been stored. If the object "inv" has a value, this value will be printed. 
+# Otherwise the inverse will be computet with the "solve" statement and stored in the cache with
+# the "setinverse" statement.
 
 cacheSolve <- function(x, ...) {
     inv <- x$getinverse()
